@@ -12,7 +12,7 @@ function App() {//main component
 	const [data, setData] = useState(null) //data required for getting number of all posts
 	const [uniques, setUniques] = useState(null) //number of unique users
 	const [dough, setDoughnut] = useState(false) //chart switcher
-	console.log(wasmDiv);
+	console.log(wasmDiv + "1");
 	async function fetchAndInstantiate(arr1, arr2) { //calculations of count there's also additional wasms for basic calculations
 		const response = await fetch(wasmDiv)
 		const buffer = await response.arrayBuffer()
