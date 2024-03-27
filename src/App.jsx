@@ -14,7 +14,7 @@ function App() {//main component
 	const [dough, setDoughnut] = useState(false) //chart switcher
 	console.log(wasmDiv + "1");
 	async function fetchAndInstantiate(arr1, arr2) { //calculations of count there's also additional wasms for basic calculations
-		const response = await fetch(wasmDiv)
+		const response = await fetch('./div.wasm')
 		const buffer = await response.arrayBuffer()
 		const obj = await WebAssembly.instantiate(buffer)
 		setCount(obj.instance.exports.div(arr1, arr2))
