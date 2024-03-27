@@ -5,16 +5,16 @@ import Footer from './common-comps/Footer'
 import * as Chart from './Charts'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
-const wasmDiv = './div.wasm'
 
 function App() {//main component
 	const [count, setCount] = useState(0) //average count of posts per existing users
 	const [data, setData] = useState(null) //data required for getting number of all posts
 	const [uniques, setUniques] = useState(null) //number of unique users
 	const [dough, setDoughnut] = useState(false) //chart switcher
-	console.log(wasmDiv + "1");
+	const wasmDiv = './div.wasm' //webAssembly script for digit division
+	
 	async function fetchAndInstantiate(arr1, arr2) { //calculations of count there's also additional wasms for basic calculations
-		const response = await fetch('./div.wasm')
+		const response = await fetch(wasmDiv)
 		const buffer = await response.arrayBuffer()
 		const obj = await WebAssembly.instantiate(buffer)
 		setCount(obj.instance.exports.div(arr1, arr2))
