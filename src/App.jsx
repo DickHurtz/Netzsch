@@ -5,7 +5,7 @@ import Footer from './common-comps/Footer'
 import * as Chart from './Charts'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
-const wasmDiv = './wa-templates/div.wasm'
+const wasmDiv = './div.wasm'
 
 function App() {//main component
 	const [count, setCount] = useState(0) //average count of posts per existing users
